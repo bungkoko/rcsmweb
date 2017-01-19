@@ -14,10 +14,10 @@
 			  <th>Nama</th>
 				<th>Jam Mulai</th>
 				<th>Jam Selesai</th>
-				<th>Profil</th>
+				<th>Deskripsi Profil</th>
 				<th>Status</th>
 				<th>
-          <a href='http://localhost/dinas-pendidikan/superadmin/pengumuman/tambah' class='btn btn'><i class='icon-plus'></i> Tambah</a>
+          <a href='<?php echo site_url('dashboard/add_talent')?>' class='btn btn'><i class='icon-plus'></i> Tambah</a>
         </th>
 			</tr>
 		</thead>
@@ -31,7 +31,7 @@
 					<td><?php echo $talent->talent_name;?></td>
 					<td><?php echo $talent->talent_hours_start;?></td>
 					<td><?php echo $talent->talent_hours_finish;?></td>
-					<td><?php echo $talent->talent_profile;?></td>
+					<td><?php echo word_limiter(strip_tags($talent->talent_profile),20);?>[...]</td>
 					<td><span class='label label-important'>Moderation</span></td>
 					<td>
             <a href='#' class='btn btn-small'><i class='icon-ok'></i></a>

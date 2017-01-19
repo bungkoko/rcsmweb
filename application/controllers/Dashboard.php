@@ -22,6 +22,9 @@ class Dashboard extends CI_Controller
   }
 
   function talent($offset=''){
+    if($this->session->userdata('logged')==FALSE):
+      redirect('admin/login');
+    endif;
     $data['profile']='dashboard/profile';
     $data['sidebar']="dashboard/sidebar";
 
@@ -39,6 +42,16 @@ class Dashboard extends CI_Controller
     $data['content']="talent/grid";
     //$data['talent']='talent/grid';
 
+    $this->load->view('admin/index',$data);
+  }
+
+  function add_talent(){
+    if($this->session->userdata('logged')==FALSE):
+      redirect('admin/login');
+    endif;
+    $data['profile']='dashboard/profile';
+    $data['sidebar']="dashboard/sidebar";
+    $data['content']="talent/add";
     $this->load->view('admin/index',$data);
   }
 

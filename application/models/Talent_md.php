@@ -15,6 +15,19 @@
       $this->db->limit($num,$offset);
       return $this->db->get('tb_talent');
     }
+
+    function set_talent(){
+      $this->db->set('talent_name',$this->input->post('talent_name'));
+      $this->db->set('talent_hours_start',$this->input->post('talent_hours_start'));
+      $this->db->set('talent_hours_finish',$this->input->post('talent_hours_finish'));
+      $this->db->set('talent_profile',$this->input->post('talent_profile'));
+    }
+
+    function add_talent($talent_picture){
+      $this->set_talent();
+      $this->db->set('talent_picture',$this->config->item('upload_path_talent').$talent_picture);
+      return $this->db->insert('tb_talent');
+    }
   }
 
 ?>

@@ -8,16 +8,20 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/admin/css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/admin/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/admin/css/redactor.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/admin/css/fileinput.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/admin/css/col.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/admin/css/bootstrap-datetimepicker.min.css">
     <script type="text/javascript" src="<?php echo base_url()?>assets/admin/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/admin/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/admin/js/main.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/admin/js/redactor.js"></script>
+
   </head>
   <body>
     <div class="navbar navbar-fixed-top m-header">
       <div class="navbar-inner m-inner">
   			<div class="container-fluid">
-  				<a target="_blank" class="brand m-brand" href="http://localhost/dinas-pendidikan/">Rumah Cantik Sehat Muslimah</a>
+  				<a target="_blank" class="brand m-brand" href="<?php echo site_url('dashboard')?>">Rumah Cantik Sehat Muslimah</a>
   				<div class="nav-collapse collapse">
   					<?php $this->load->view('admin/'.$profile);?>
   					<div class="btn-group pull-right">
@@ -41,7 +45,7 @@
     </div>
     <div class="main-container">
     	<div class="container-fluid">
-    	  <?php $this->load->view('admin/'.$content);?>
+    	     <?php $this->load->view('admin/'.$content);?>
         <footer class="footer">
       		<div class="container">
       			Copyright &copy; 2017 Rumah Cantik Sehat Muslimah<br> Developed by Joko Purwanto
