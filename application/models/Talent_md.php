@@ -28,6 +28,11 @@
       $this->db->set('talent_picture',$this->config->item('upload_path_talent').$talent_picture);
       return $this->db->insert('tb_talent');
     }
+
+    function delete_talent($id){
+      $this->db->where('talent_id',$id);
+      return $this->db->delete('tb_talent');
+    }
   }
 
 ?>

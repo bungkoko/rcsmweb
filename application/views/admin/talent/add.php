@@ -5,15 +5,15 @@
 
   <ul id="crumbs">
     <li><a href="<?php echo site_url('dashboard')?>">Dashboard</a></li>
-    <li><a href="<?php echo site_url('dashboard/talent')?>">Talent</a></li>
+    <li><a href="<?php echo site_url('talent/daftar')?>">Talent</a></li>
     <li>Tambah Talent</li>
   </ul>
   <div class="row-fluid">
-    <form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="<?php echo site_url('talent/tambah')?>" enctype="multipart/form-data">
       <div class="col-md-3">
         <div id="kv-avatar-errors-2" class="center-block" style="width:800px;display:none"></div>
         <div class="kv-avatar center-block" style="width:200px">
-          <input id="avatar" name="anggota_avatar" type="file" class="file-loading">
+          <input id="avatar" name="talent_picture" type="file" class="file-loading">
         </div>
       </div>
       <div class="col-md-6">
@@ -57,7 +57,7 @@
             </td>
           </tr>
         </table>
-        <input type="submit" class="btn btn-info" value="SIMPAN" />
+        <input type="submit" class="btn btn-info" value="SIMPAN" name="submit" />
       </div>
     </form>
   </div>

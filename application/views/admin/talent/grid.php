@@ -17,7 +17,7 @@
 				<th>Deskripsi Profil</th>
 				<th>Status</th>
 				<th>
-          <a href='<?php echo site_url('dashboard/add_talent')?>' class='btn btn'><i class='icon-plus'></i> Tambah</a>
+          <a href='<?php echo site_url('talent/tambah')?>' class='btn btn'><i class='icon-plus'></i> Tambah</a>
         </th>
 			</tr>
 		</thead>
@@ -36,7 +36,7 @@
 					<td>
             <a href='#' class='btn btn-small'><i class='icon-ok'></i></a>
             <a href='#' class='btn btn-small'><i class='icon-edit'></i></a>
-            <a href='#' onClick="return confirm('Anda yakin?');" class='btn btn-small'><i class='icon-trash'></i></a>
+            <a href='<?php echo site_url('talent/hapus').'/'.$talent->talent_id;?>' onClick="return confirm('Anda yakin?');" class='btn btn-small'><i class='icon-trash'></i></a>
           </td>
 			</tr>
       <?php
