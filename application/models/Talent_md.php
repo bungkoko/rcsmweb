@@ -29,9 +29,23 @@
       return $this->db->insert('tb_talent');
     }
 
+    function read_data($id){
+      $this->db->where('talent_id',$id);
+      return $this->db->get('tb_talent')->row();
+    }
+
     function delete_talent($id){
       $this->db->where('talent_id',$id);
-      return $this->db->delete('tb_talent');
+      $query=$this->db->get('tb_talent');
+      $row=$query->row();
+      unlink(".$row->talent_picture");
+      return $this->db->delete('tb_talent',array('talent_id'=>$id));
+    }
+
+    function update_talent($id){
+      $this->set_talent();
+      $this->db->where('talent_id',$id);
+      return $this->db->update('tb_talent');
     }
   }
 

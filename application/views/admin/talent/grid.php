@@ -35,7 +35,7 @@
 					<td><span class='label label-important'>Moderation</span></td>
 					<td>
             <a href='#' class='btn btn-small'><i class='icon-ok'></i></a>
-            <a href='#' class='btn btn-small'><i class='icon-edit'></i></a>
+            <a href='<?php echo site_url('talent/edit').'/'.$talent->talent_id;?>' class='btn btn-small'><i class='icon-edit'></i></a>
             <a href='<?php echo site_url('talent/hapus').'/'.$talent->talent_id;?>' onClick="return confirm('Anda yakin?');" class='btn btn-small'><i class='icon-trash'></i></a>
           </td>
 			</tr>

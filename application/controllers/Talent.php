@@ -75,13 +75,13 @@
                 //Resize Image
                 $config['image_library']=$this->config->item('image_library');
                 $config['maintain_ratio']=$this->config->item('maintain_ratio');
-                $config['width']=163;
-                $config['height']=143;
+                $config['width']=500;
+                $config['height']=500;
 
                 $config['source_image']=$talent_fullpath;
 
                 $this->image_lib->initialize($config);
-                $this->image_lib->resize();
+                //$this->image_lib->resize();
                 $this->image_lib->clear();
 
                 $this->talent_md->add_talent($talent_path);
@@ -100,6 +100,30 @@
     function hapus($id){
       $this->talent_md->delete_talent($id);
       redirect('talent');
+    }
+
+    function edit($id){
+      $data['dt_read']=$this->talent_md->read_data($id);
+
+      if($this->input->post('submit')):
+        $this->form_validation->set_rules('talent_name','Nama Talent','required');
+        $this->form_validation->set_rules('talent_hours_start','Jam Masuk','required');
+        $this->form_validation->set_rules('talent_hours_finish','Jam Keluar','required');
+        $this->form_validation->set_rules('talent_profile','Profile','required');
+
+        if($this->form_validation->run()==true):
+          $this->talent_md->update_talent($id);
+          $this->session->set_flashdata('message','Data sudah berhasil diubah');
+          redirect('talent');
+        else:
+          $data['error']=validation_errors();
+        endif;
+      endif;
+
+      $data['profile']='dashboard/profile';
+      $data['sidebar']="dashboard/sidebar";
+      $data['content']='talent/update';
+      $this->load->view('admin/index',$data);
     }
   }
 

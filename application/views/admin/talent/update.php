@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-		<h1>Tambah Talent</h1>
+		<h1>Edit Talent</h1>
 	</div>
 
   <ul id="crumbs">
@@ -9,26 +9,20 @@
     <li>Tambah Talent</li>
   </ul>
   <div class="row-fluid">
-    <form class="form-horizontal" method="post" action="<?php echo site_url('talent/tambah')?>" enctype="multipart/form-data">
-      <div class="col-md-3">
-        <div id="kv-avatar-errors-2" class="center-block" style="width:800px;display:none"></div>
-        <div class="kv-avatar center-block" style="width:200px">
-          <input id="avatar" name="talent_picture" type="file" class="file-loading">
-        </div>
-      </div>
+    <form class="form-horizontal" method="post" action="<?php echo current_url()?>" enctype="multipart/form-data">
       <div class="col-md-6">
         <table border="0">
           <tr>
             <td><label>Nama</label></td>
             <td> : </td>
-            <td><input name="talent_name" placeholder="Masukan Nama Talent"></td>
+            <td><input name="talent_name" value="<?php echo $dt_read->talent_name;?>"></td>
           </tr>
           <tr>
             <td><label>Jam Mulai</label></td>
             <td style="vertical-align:top"> : </td>
             <td>
               <div id="mulai_kerja" class="input-append date">
-                <input data-format="hh:mm:ss" name="talent_hours_start" type="text" placeholder="Masukkan Jam Mulai Kerja"></input>
+                <input data-format="hh:mm:ss" name="talent_hours_start" type="text" value="<?php echo $dt_read->talent_hours_start;?>"></input>
                 <span class="add-on">
                   <i data-time-icon="icon-time" data-date-icon="icon-calendar">
                   </i>
@@ -41,7 +35,7 @@
             <td> : </td>
             <td>
               <div id="selesai_kerja" class="input-append date">
-                <input data-format="hh:mm:ss" name="talent_hours_finish" type="text" placeholder="Masukan Jam Selesai Kerja"></input>
+                <input data-format="hh:mm:ss" name="talent_hours_finish" type="text" value="<?php echo $dt_read->talent_hours_finish;?>"></input>
                 <span class="add-on">
                   <i data-time-icon="icon-time" data-date-icon="icon-calendar">
                   </i>
@@ -53,11 +47,11 @@
             <td style="vertical-align:top"><label>Profile</label></td>
             <td style="vertical-align:top"> : </td>
             <td>
-              <textarea name="talent_profile" rows="8" cols="120"></textarea>
+              <textarea name="talent_profile" rows="8" cols="120"><?php echo $dt_read->talent_profile;?></textarea>
             </td>
           </tr>
         </table>
-        <input type="submit" class="btn btn-info" value="SIMPAN" name="submit" />
+        <input type="submit" class="btn btn-info" value="Edit" name="submit" />
       </div>
     </form>
   </div>
